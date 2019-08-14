@@ -1,12 +1,17 @@
 <template>
-    <demo></demo>
+    <div style="text-align: center;margin-top: 20px;">
+        <g-button type="primary">点我</g-button>
+    </div>
 </template>
 
 <script>
+import GButton from 'components/button/src/button'
 export default {
-  name: 'app',
-  components: {},
-  created () {}
+    name: 'app',
+    components: {
+        GButton
+    },
+    created() {}
 }
 </script>
 
