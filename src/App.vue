@@ -1,6 +1,24 @@
 <template>
     <div style="text-align: center;margin-top: 20px;">
-        <g-button type="primary">点我</g-button>
+        <g-button
+            type="primary"
+            size="large"
+            icon="search"
+        ></g-button>
+        <g-button type="success">
+            点我
+            <i class="iconfont g-icon-cloud-upload"></i>
+        </g-button>
+        <g-button
+            loading
+            type="danger"
+            size="small"
+        >点我</g-button>
+        <g-button
+            type="info"
+            size="large"
+            disabled
+        >点我</g-button>
     </div>
 </template>
 
