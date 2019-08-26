@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
-import g from '@jquank/g-ui'
+// import G from '@jquank/g-ui'
+// import '@jquank/g-ui/dist/g-ui.css'
+// Vue.use(G)
 import './assets/common-less/index.less'
-Vue.use(g)
+
 Vue.config.productionTip = false
 
 new Vue({

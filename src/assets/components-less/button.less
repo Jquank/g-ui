@@ -40,8 +40,8 @@
         animation: rotating 2s linear infinite;
     }
 }
-.button-type-loop(@i) when (@i < length(@button-type-list)+1) {
-    @el: extract(@button-type-list, @i);
+.button-type-loop(@i) when (@i < length(@type-list)+1) {
+    @el: extract(@type-list, @i);
     @el-color: ~'color-@{el}';
     .g-button--@{el} {
         color: @text-color-white;

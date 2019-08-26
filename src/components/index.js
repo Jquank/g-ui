@@ -1,9 +1,13 @@
-import Demo from './demo.vue'
+import GButton from '@/components/button/index'
+import GLink from '@/components/link/index'
+
+import '../assets/common-less/index.less'
 const Components = {
-  Demo
+  GButton,
+  GLink
 }
 const G = {
-  install (Vue, options) {
+  install(Vue, options) {
     Object.keys(Components).forEach(name => {
       Vue.component(name, Components[name])
     })
@@ -11,3 +15,5 @@ const G = {
 }
 
 export default G
+
+export { GButton, GLink }

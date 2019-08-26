@@ -19,15 +19,26 @@
             size="large"
             disabled
         >点我</g-button>
+        <g-link>link文字1</g-link>
+        <g-link
+            type="danger"
+            href="https://www.baidu.com"
+            icon="search"
+        >
+            link文字2
+            <i class="iconfont g-icon-cloud-upload"></i>
+        </g-link>
     </div>
 </template>
 
 <script>
 import GButton from 'components/button/src/button'
+import GLink from 'components/link/src/link'
 export default {
     name: 'app',
     components: {
-        GButton
+        GButton,
+        GLink
     },
     created() {}
 }
