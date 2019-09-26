@@ -8,9 +8,8 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))
-      .set('common', resolve('src/common'))
       .set('components', resolve('src/components'))
-      .set('views', resolve('src/views'))
+      .set('ex', resolve('src/example'))
   }
   // pluginOptions: {
   //     'style-resources-loader': {
