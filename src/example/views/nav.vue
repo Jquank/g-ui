@@ -1,57 +1,35 @@
 <template>
     <div>
         <el-menu
-            default-active="2"
-            class="el-menu-vertical-demo"
+            :default-active="$router.currentRoute.fullPath"
             @open="handleOpen"
             @close="handleClose"
-            background-color="#545c64"
-            text-color="#fff"
-            active-text-color="#ffd04b"
+            background-color="#fff"
+            text-color="#000"
+            active-text-color="#409EFF"
+            router
         >
-            <!-- <el-submenu index="1">
-                <template slot="title">
-                    <i class="el-icon-location"></i>
-                    <span>导航一</span>
-                </template>
-                <el-menu-item-group>
-                    <template slot="title">分组一</template>
-                    <el-menu-item index="1-1">选项1</el-menu-item>
-                    <el-menu-item index="1-2">选项2</el-menu-item>
-                </el-menu-item-group>
-                <el-menu-item-group title="分组2">
-                    <el-menu-item index="1-3">选项3</el-menu-item>
-                </el-menu-item-group>
-                <el-submenu index="1-4">
-                    <template slot="title">选项4</template>
-                    <el-menu-item index="1-4-1">选项1</el-menu-item>
-                </el-submenu>
-            </el-submenu>-->
-            <el-menu-item index="1">
-                <i class="el-icon-menu"></i>
-                <span slot="title">button</span>
-            </el-menu-item>
-            <el-menu-item
-                index="2"
-                disabled
-            >
-                <i class="el-icon-document"></i>
-                <span slot="title">alink</span>
-            </el-menu-item>
-            <el-menu-item index="3">
-                <i class="el-icon-setting"></i>
-                <span slot="title">导航四</span>
-            </el-menu-item>
+            <template v-for="item in navList">
+                <el-menu-item
+                    v-if="item.path!=='/'"
+                    :key="item.path"
+                    :index="item.path"
+                >
+                    <span slot="title">{{item.meta.name}}</span>
+                </el-menu-item>
+            </template>
         </el-menu>
     </div>
 </template>
 
 <script>
+import router from '@/router.js'
 export default {
     data() {
-        return {}
+        return {
+            navList: router.options.routes
+        }
     },
-
     methods: {
         handleOpen(key, keyPath) {
             console.log(key, keyPath)

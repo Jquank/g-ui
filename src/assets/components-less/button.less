@@ -39,6 +39,9 @@
         transition: 1s;
         animation: rotating 2s linear infinite;
     }
+    & + .g-button {
+        margin-left: 5px;
+    }
 }
 .button-type-loop(@i) when (@i < length(@type-list)+1) {
     @el: extract(@type-list, @i);

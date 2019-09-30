@@ -1,10 +1,12 @@
 import GButton from '@/components/button/index'
 import GLink from '@/components/link/index'
+import GInput from '@/components/input/index'
 
 import '../assets/common-less/index.less'
 const Components = {
   GButton,
-  GLink
+  GLink,
+  GInput
 }
 const G = {
   install(Vue, options) {
@@ -16,4 +18,4 @@ const G = {
 
 export default G
 
-export { GButton, GLink }
+export { GButton, GLink, GInput }
