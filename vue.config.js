@@ -12,10 +12,14 @@ module.exports = {
       .set('ex', resolve('src/example'))
   },
   pages: {
-    index: {
-      entry: './src/example/index/index.js'
+    demo: {
+      entry: './src/example/components-demo/main.js',
+      template: './src/example/components-demo/index.html'
     },
-    design: {}
+    design: {
+      entry: './src/example/design-intro/main.js',
+      template: './src/example/design-intro/index.html'
+    }
   }
   // pluginOptions: {
   //     'style-resources-loader': {
