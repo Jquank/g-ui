@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Intro from 'ex/views/intro.vue'
-import Button from 'ex/views/button.vue'
-import Link from 'ex/views/link.vue'
-import Input from 'ex/views/input.vue'
+import Intro from 'ex/views/index/intro.vue'
+import Button from 'ex/views/index/button.vue'
+import Link from 'ex/views/index/link.vue'
+import Input from 'ex/views/index/input.vue'
+import DragTable from 'ex/views/index/drag-table.vue'
+import Upload from 'ex/views/index/upload.vue'
 
 Vue.use(Router)
 
@@ -36,6 +38,18 @@ export default new Router({
       name: 'input',
       component: Input,
       meta: { name: 'input输入框' }
+    },
+    {
+      path: '/dragTable',
+      name: 'dragTable',
+      component: DragTable,
+      meta: { name: 'dragTable示例' }
+    },
+    {
+      path: '/upload',
+      name: 'upload',
+      component: Upload,
+      meta: { name: 'upload上传' }
     }
     // {
     //   path: '/about',

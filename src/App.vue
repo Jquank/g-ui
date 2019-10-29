@@ -1,6 +1,8 @@
 <template>
     <div id="app">
-        <div class="header"></div>
+        <div class="header">
+            <my-header></my-header>
+        </div>
         <div class="container">
             <div class="nav">
                 <my-nav class="my-nav"></my-nav>
@@ -14,10 +16,15 @@
 
 <script>
 import MyNav from 'ex/views/nav.vue'
+import MyHeader from 'ex/views/my-header.vue'
 export default {
     name: 'app',
+    data() {
+        return {}
+    },
     components: {
-        MyNav
+        MyNav,
+        MyHeader
     }
 }
 </script>

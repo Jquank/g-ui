@@ -10,6 +10,12 @@ module.exports = {
       .set('@', resolve('src'))
       .set('components', resolve('src/components'))
       .set('ex', resolve('src/example'))
+  },
+  pages: {
+    index: {
+      entry: './src/example/index/index.js'
+    },
+    design: {}
   }
   // pluginOptions: {
   //     'style-resources-loader': {

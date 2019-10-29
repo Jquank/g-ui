@@ -1,11 +1,14 @@
 <template>
-    <div class="g-input-wrapper">
-        <span>{{showValue}}</span>
+    <div
+        class="g-input-wrapper"
+        ref="inputWrapper"
+    >
+        <span ref="showSpan">{{showValue}}</span>
         <el-input
             v-model="currentValue"
             @input="input"
-            @blur="$emit('blur')"
-            @focus="$emit('focus')"
+            @blur="blur"
+            @focus="focus"
             @clear="$emit('clear')"
         ></el-input>
     </div>
@@ -39,6 +42,19 @@ export default {
         }
     },
     methods: {
+        blur() {
+            this.$refs.showSpan.style.display = 'inline-block'
+            let input = document.getElementsByTagName('input')[0]
+            input.style.color = 'transparent'
+            this.$emit('blur')
+        },
+        focus() {
+            this.$refs.showSpan.style.display = 'none'
+            let input = document.getElementsByTagName('input')[0]
+            let c = window.getComputedStyle(this.$refs.inputWrapper).color
+            input.style.color = c
+            this.$emit('focus')
+        },
         input() {
             this.$emit('input', this.currentValue)
         },

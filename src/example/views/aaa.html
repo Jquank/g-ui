@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="hh">123456</h1>
+        <script>
+            var ev = document.createEvent('CustomEvent')
+            ev.initCustomEvent('ev', false, true, { b: 2 })
+
+            document.addEventListener('ev', function(e) {
+                console.log(e.detail)
+            })
+            document.getElementById('hh').onclick = function() {
+                console.log(1111)
+                document.dispatchEvent(ev)
+            }
+        </script>
+    </body>
+</html>

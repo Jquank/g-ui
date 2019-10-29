@@ -2,8 +2,8 @@
     <div>
         <g-input
             v-model="a"
-            decimal="1"
-            :thousand="true"
+            decimal="2"
+            thousand
             style="width: 300px;"
         ></g-input>
     </div>
@@ -19,11 +19,6 @@ export default {
     },
     components: {
         GInput
-    },
-    watch: {
-        a(val) {
-            console.log(val)
-        }
     }
 }
 </script>
