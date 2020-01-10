@@ -1,0 +1,32 @@
+@import '../common-less/variable.less';
+.g-checkbox__original {
+    width: 0;
+    height: 0;
+    z-index: -1;
+    outline: none;
+    opacity: 0;
+}
+.g-checkbox__inner {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    border: 1px solid @border-color-base;
+    border-radius: 2px;
+    vertical-align: middle;
+    &.is-checked {
+        background-color: @color-primary;
+        border-color: @color-primary;
+    }
+    &::after {
+    }
+    transition: background-color 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55), border-color 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.g-checkbox__label {
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: middle;
+    &.is-checked {
+        color: @color-primary;
+    }
+}

@@ -23,20 +23,23 @@
 </template>
 
 <script>
-import router from '@/router.js'
 export default {
+    props: {
+        router: {
+            type: Object,
+            default() {
+                return {}
+            }
+        }
+    },
     data() {
         return {
-            navList: router.options.routes
+            navList: this.router.options.routes
         }
     },
     methods: {
-        handleOpen(key, keyPath) {
-            console.log(key, keyPath)
-        },
-        handleClose(key, keyPath) {
-            console.log(key, keyPath)
-        }
+        handleOpen(key, keyPath) {},
+        handleClose(key, keyPath) {}
     }
 }
 </script>

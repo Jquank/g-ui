@@ -3,4 +3,29 @@ body {
     font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial,
         sans-serif;
     height: 100%;
+    margin: 0;
+}
+#app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+    .container {
+        display: flex;
+        height: calc(~'100% - 80px');
+        .nav {
+            flex: 0 0 180px;
+            .my-nav {
+                height: 100%;
+                .el-menu {
+                    height: 100%;
+                }
+            }
+        }
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+    }
 }

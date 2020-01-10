@@ -19,6 +19,19 @@
                 console.log(1111)
                 document.dispatchEvent(ev)
             }
+            var arr = [1, 2, 3, 4]
+            arr.every(val => {
+                if (val < 3) {
+                    console.log(val)
+                    return true
+                }
+            })
+            arr.some(val => {
+                if (val > 2) {
+                    console.log(val)
+                    return false
+                }
+            })
         </script>
     </body>
 </html>

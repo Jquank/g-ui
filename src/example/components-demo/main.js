@@ -1,21 +1,21 @@
 import Vue from 'vue'
-// import Element from 'element-ui'
-// import 'element-ui/lib/theme-chalk/index.css'
-// import './assets/example-less/index.less'
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import '@/assets/example-less/index.less'
 
 import App from './app.vue'
-// import router from './router'
-// import store from './store'
+import router from './router'
 
-// import './assets/common-less/index.less'
+import '@/assets/common-less/index.less'
 
-// import G from '@jquank/g-ui'
-// import '@jquank/g-ui/dist/g-ui.css'
+import G from '@jquank/g-ui'
+import '@jquank/g-ui/dist/g-ui.css'
 
-// Vue.use(G)
+Vue.use(G)
 Vue.config.productionTip = false
-// Vue.use(Element)
+Vue.use(Element)
 
 new Vue({
+  router,
   render: h => h(App)
 }).$mount('#app')
