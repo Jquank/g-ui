@@ -1,12 +1,6 @@
 @import '../common-less/variable.less';
-.g-checkbox__original {
-    width: 0;
-    height: 0;
-    z-index: -1;
-    outline: none;
-    opacity: 0;
-}
 .g-checkbox__inner {
+    position: relative;
     display: inline-block;
     box-sizing: border-box;
     width: 14px;
@@ -14,13 +8,38 @@
     border: 1px solid @border-color-base;
     border-radius: 2px;
     vertical-align: middle;
+    transition: background-color 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        border-color 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     &.is-checked {
         background-color: @color-primary;
         border-color: @color-primary;
+        &::after {
+            transform: rotate(45deg) scaleY(1);
+            border-color: #fff;
+        }
+    }
+    &.is-disabled {
+        background-color: lighten(@text-color-disabled, 5%);
+        border-color: lighten(@text-color-disabled, 5%);
+        &:hover {
+            cursor: not-allowed;
+        }
     }
     &::after {
+        box-sizing: content-box;
+        content: '';
+        border: 1px solid transparent;
+        border-left: 0;
+        border-top: 0;
+        height: 7px;
+        left: 4px;
+        position: absolute;
+        top: 1px;
+        transform: rotate(45deg) scaleY(0);
+        width: 3px;
+        transition: transform 0.15s ease-in 0.05s;
+        transform-origin: center;
     }
-    transition: background-color 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55), border-color 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .g-checkbox__label {
     display: inline-block;
@@ -28,5 +47,18 @@
     vertical-align: middle;
     &.is-checked {
         color: @color-primary;
+    }
+    &.is-disabled {
+        color: @text-color-disabled;
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+}
+
+/*checkbox-group*/
+.g-checkbox-group {
+    & > .g-checkbox:not(:last-child) {
+        margin-right: 30px;
     }
 }

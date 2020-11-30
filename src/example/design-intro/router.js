@@ -25,6 +25,12 @@ export default new Router({
             name: 'pubSub',
             meta: { name: 'pubSub' },
             component: () => import('./views/pub-sub-model/index.vue')
+        },
+        {
+            path: '/jsonForm',
+            name: 'jsonForm',
+            meta: { name: 'jsonForm' },
+            component: () => import('./views/json-form/index.vue')
         }
         // {
         //   path: '/about',

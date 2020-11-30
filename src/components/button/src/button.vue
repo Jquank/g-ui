@@ -3,20 +3,16 @@
         type="button"
         :disabled="buttonDisabled"
         class="g-button"
-        :class="[type?'g-button--'+type:'', buttonSize?'g-button--'+buttonSize:'',
+        :class="[
+            type ? 'g-button--' + type : '',
+            buttonSize ? 'g-button--' + buttonSize : '',
             {
-                'is-disabled':buttonDisabled
+                'is-disabled': buttonDisabled
             }
         ]"
     >
-        <i
-            v-if="icon"
-            :class="'iconfont g-icon-'+icon"
-        ></i>
-        <i
-            v-if="loading"
-            class="iconfont g-icon-loading"
-        ></i>
+        <i v-if="icon" :class="'iconfont g-icon-' + icon"></i>
+        <i v-if="loading" class="iconfont g-icon-loading"></i>
         <span>
             <slot></slot>
         </span>
